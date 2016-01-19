@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following lines define \boxaround, used to draw a box on the page.
+% The parameter is the entire text of the resume. Must fit on one page!
+%
+% \boxaroundhmargin is the left & right margin around the text inside the box.
+% \boxaroundvmargin is the top & bottom margin around the text inside the box.
+% \boxrulethickness controls thickness of line used to draw the box.
+% You can change these 3 things in the lines below:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newdimen\boxrulethickness\newdimen\boxaroundhmargin\newdimen\boxaroundvmargin
+\boxrulethickness=.5pt        %controls thickness of line 
+\boxaroundhmargin=25pt        % about a half inch
+\boxaroundvmargin=20pt        % to fit more text on page, make this smaller
+%%%%%%%%%%%%%%%%%%%%%%%%% Don't read this stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hsize=7.5in% \vsize=10.5in             % use bigger dimensions for box
+\newbox\MACboxA  \newdimen\MACdimenA
+% \borderandboxit is used inside \boxaround:
+\def\borderandboxit#1#2#3{\vbox{\hrule height#2\hbox{\vrule width#2\hskip#1\hskip-#2%
+  \vbox{\vskip#1\relax#3\vskip#1}\hskip#1\hskip-#2\vrule width#2}\hrule height#2}}
+%
+\long\def\boxaround#1{\vskip6pt
+  {\MACdimenA=\hsize \advance\MACdimenA by-\boxaroundhmargin
+   \advance\MACdimenA by-\boxaroundhmargin   % once for each side
+   \setbox\MACboxA=\hbox to \hsize{\hskip\boxaroundhmargin%\hss
+                     \vbox{\hsize=\MACdimenA
+                           \vskip\boxaroundvmargin #1
+                           \vskip\boxaroundvmargin}\hss}%
+   \borderandboxit{0pt}\boxrulethickness{\box\MACboxA}}%
+  \vskip2pt plus0pt minus0pt
+}
+%%%%%%%%%%%%%%%%%%%  End of \boxaround macro %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\boxaround{ % put the text on the page inside a box  
+
+\name{ELIZABETH WICHERS\\[12pt]}
+\address{\bf Address\\1221 Mayfield Drive \#304\\Ames, IA 50014} 
+\address{\bf Contact\\Email: elwichers@gmail.com\\
+         Phone: (402)570-7662}
+
+ 
+\begin{resume}
+
+
+\section{\bf  Education}
+Iowa State University, B.S.,  Biological Pre-Medical Illustration, 
+expected May 2016 \\
+Doane College, Biology \& Graphic Arts, Years attended: 2011-2013 \\
+Lincoln Southwest High School, Graduated May 2011 \\ 
+Information Technology Focus Program, Lincoln, NE., Years attended: 2009-2011.
+
+\section{\bf  Proficiencies}
+Adobe Creative Suite \\
+Cinema4D  \\
+Microsoft Word, Power Point, Excel  
+ 
+\section{\bf  Work Experience}
+\begin{ncolumn}{2}
+{\it Procurement Staff Assistant} December 2013-Present 
+\end{ncolumn}\\
+Iowa State University, Ames, IA \\
+$\circ$ Archiving, maintaining \& managing procurement documentation. \\ $\circ$  Resolving invoices, \& distribution of verbal and written correspondence from \\ vendors, departments, \& procurement agents. 
+
+\begin{ncolumn}{2} 
+{\it  Illustrator/Animator}, Fall 2009-December 2013 
+\end{ncolumn}\\
+Nanobugs, Lincoln, NE \\
+$\circ$ Designed, developed, animated, \& managed company products and marketing materials.\\
+$\circ$ Experience working closely with local and international customers. 
+
+\begin{ncolumn}{2} 
+{\it Freelance Artist}, 2009-Present 
+\end{ncolumn}\\
+Clients:\\
+Ernie Miller Nature Center, Oathe, KS. Native Flora \& Fauna Illustrations, 2016.\\
+UNL's Cockroach Biology Lab\\
+UNL's Leukemia/Lymphoma Society\\
+St. Elizabeth's Regional Medical Center\\
+Epona Horse Rescue\\
+``In the Garden'' Collegiate Interpretive Arts production 
+
+
+{\it  Leader of Teen Volunteers}, Summer 2008-Summer 2013\\
+St. Elizabeth's Regional Medical Center, Lincoln, NE \\
+Worked within a team and with many professionals in a private health care setting.
+
+\begin{ncolumn}{2} 
+{\it Florist \& Sales Associate} , Fall 2011-Spring 2012 
+\end{ncolumn}\\
+Crete Floral, Crete, NE \\
+Maintenance of seasonal and everyday stock, arranged bouquets, \& assisted with \\ seasonal decorations and displays.
+
+\section{\bf  Publications}
+E.J. Sandquist, M. Uz, B., A. Sharma, B.B. Patel, S.K. Mallapragada and D.S. Sakaguchi. Stem cells, bioengineering and 3-D scaffolds for nervous system repair and regeneration. In “Neural Engineering: from Advanced Biomaterials to 3D Fabrication Techniques”, L.G. Zhang and D. Kaplan (eds.). Springer. (Invited book chapter, in submission).\\ 
+Doane College ``Xanadu'', 2013\\
+Doane College ``1014'' magazine, cover art \& cadaver illustrations, 2013 
+
+ 
+\section{\bf  Other Related Experience}
+Collegiate ``Figure Drawing'' Co-op Coordinator \& Host, May 2015-May 2016\\ 
+Boundary Waters gallery show, Winter 2016\\
+Barnes \& Noble featured artist, February 2013\\
+Security First gallery show, Spring 2013
+
+\section{\bf  Honors}
+Hixon and Leid Nebraska's Young Artist Award
+
+\end{resume}
+
+\vfill} %    end the material being boxed.
